@@ -41,7 +41,7 @@
     - **Test**: `pnpm run typecheck` validates env at build
     - **Done When**: Required vars: `RESEND_API_KEY`, `LEAD_NOTIFICATION_EMAIL`, `NEXT_PUBLIC_SITE_URL`; optional: `CRM_WEBHOOK_URL`, `NEXT_PUBLIC_GA_ID`, `NEXT_PUBLIC_GTM_ID`, `SENTRY_DSN`
 
-- [ ] **T008**: Update `.env.example` to match static site requirements (remove WordPress vars)
+- [x] **T008**: Update `.env.example` to match static site requirements (remove WordPress vars)
     - **Archivo(s)**: `.env.example`
     - **Test**: File matches spec.md env requirements
     - **Done When**: No WordPress/GraphQL vars, only static site + email + analytics vars
