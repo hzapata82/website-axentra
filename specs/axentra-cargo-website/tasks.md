@@ -74,7 +74,7 @@
 
 ## Fase 2: UI Primitives (Design System)
 
-- [ ] **T013**: Build `Button` component (variants: primary, secondary, ghost; sizes: sm, md, lg)
+- [x] **T013**: Build `Button` component (variants: primary, secondary, ghost; sizes: sm, md, lg)
     - **Archivo(s)**: `components/ui/Button.tsx`, `components/ui/Button.stories.tsx`
     - **Test**: `tests/unit/components/Button.test.tsx` - variants, sizes, loading state, accessibility
     - **Done When**: All variants render, `focus-visible-ring` applied, loading spinner works
