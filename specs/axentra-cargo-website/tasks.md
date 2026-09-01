@@ -79,7 +79,7 @@
     - **Test**: `tests/unit/components/Button.test.tsx` - variants, sizes, loading state, accessibility
     - **Done When**: All variants render, `focus-visible-ring` applied, loading spinner works
 
-- [ ] **T014**: Build `Input`, `Textarea`, `Select` form components
+- [x] **T014**: Build `Input`, `Textarea`, `Select` form components
     - **Archivo(s)**: `components/ui/Input.tsx`, `components/ui/Textarea.tsx`, `components/ui/Select.tsx`
     - **Test**: `tests/unit/components/FormFields.test.tsx` - label association, error state, required, disabled
     - **Done When**: All have `forwardRef`, `aria-invalid`, `aria-describedby` for errors
