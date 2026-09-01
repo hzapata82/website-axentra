@@ -31,7 +31,7 @@
     - **Test**: `tests/unit/utils/validation.test.ts` - valid/invalid inputs
     - **Done When**: Schema validates email, company, volume, details per spec
 
-- [ ] **T006**: Create data files in `src/data/` with all content
+- [x] **T006**: Create data files in `src/data/` with all content
     - **Archivo(s)**: `src/data/hero.ts`, `src/data/industries.ts`, `src/data/kpis.ts`, `src/data/services.ts`, `src/data/contact-form.ts`, `src/data/seo.ts`, `src/data/index.ts`
     - **Test**: `tests/unit/data/content.test.ts` - imports work, types match
     - **Done When**: All content from spec.md represented, typed correctly
