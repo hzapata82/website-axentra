@@ -99,7 +99,7 @@
     - **Test**: Visual - renders, respects `prefers-reduced-motion`
     - **Done When**: Animated spinner, static when reduced motion
 
-- [ ] **T018**: Build layout primitives `Container`, `Section`
+- [x] **T018**: Build layout primitives `Container`, `Section`
     - **Archivo(s)**: `components/layout/Container.tsx`, `components/layout/Section.tsx`
     - **Test**: `tests/unit/components/Layout.test.tsx` - max-width, padding responsive
     - **Done When**: Consistent spacing, responsive breakpoints match spec
