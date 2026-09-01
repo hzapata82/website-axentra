@@ -113,7 +113,7 @@
     - **Test**: `tests/unit/hooks/useReducedMotion.test.ts` - matches media query, updates on change
     - **Done When**: Returns boolean, subscribes to `prefers-reduced-motion` changes
 
-- [ ] **T020**: Create `useIntersectionObserver` hook
+- [x] **T020**: Create `useIntersectionObserver` hook
     - **Archivo(s)**: `hooks/useIntersectionObserver.ts`
     - **Test**: `tests/unit/hooks/useIntersectionObserver.test.ts` - triggers on viewport entry
     - **Done When**: Configurable rootMargin, threshold, cleanup on unmount
