@@ -84,7 +84,7 @@
     - **Test**: `tests/unit/components/FormFields.test.tsx` - label association, error state, required, disabled
     - **Done When**: All have `forwardRef`, `aria-invalid`, `aria-describedby` for errors
 
-- [ ] **T015**: Build `Card` component (base for industries/services)
+- [x] **T015**: Build `Card` component (base for industries/services)
     - **Archivo(s)**: `components/ui/Card.tsx`, `components/ui/Card.stories.tsx`
     - **Test**: `tests/unit/components/Card.test.tsx` - children render, hover/focus states
     - **Done When**: Border, shadow, hover elevation, `focus-visible-ring` on interactive cards
