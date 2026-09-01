@@ -51,7 +51,7 @@
     - **Test**: `pnpm run build` → `out/` directory with `index.html` + assets
     - **Done When**: `output: 'export'`, `images.unoptimized: true`, `trailingSlash: true`, build succeeds
 
-- [ ] **T010**: Update `vercel.json` for static export (remove preview/crons/rewrites)
+- [x] **T010**: Update `vercel.json` for static export (remove preview/crons/rewrites)
     - **Archivo(s)**: `vercel.json`
     - **Test**: Vercel deployment works with static output
     - **Done When**: No WordPress preview rewrites, no crons, headers only for static assets

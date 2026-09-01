@@ -5,11 +5,6 @@
   "devCommand": "pnpm run dev",
   "installCommand": "pnpm install",
   "regions": ["iad1"],
-  "functions": {
-    "src/app/api/**/*.ts": {
-      "maxDuration": 30
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
@@ -46,15 +41,6 @@
       ]
     },
     {
-      "source": "/fonts/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
       "source": "/_next/static/(.*)",
       "headers": [
         {
@@ -62,22 +48,6 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/preview/:path*",
-      "destination": "/:path*"
-    },
-    {
-      "source": "/api/revalidate",
-      "destination": "/api/revalidate"
-    }
-  ],
-  "crons": [
-    {
-      "path": "/api/cron/revalidate-all",
-      "schedule": "0 */6 * * *"
     }
   ],
   "github": {
