@@ -94,7 +94,7 @@
     - **Test**: `tests/unit/components/Toast.test.tsx` - success/error variants, auto-dismiss, accessibility
     - **Done When**: `role="alert"`, `aria-live="polite"`, keyboard dismissible
 
-- [ ] **T017**: Build `Spinner` loading component
+- [x] **T017**: Build `Spinner` loading component
     - **Archivo(s)**: `components/ui/Spinner.tsx`
     - **Test**: Visual - renders, respects `prefers-reduced-motion`
     - **Done When**: Animated spinner, static when reduced motion
