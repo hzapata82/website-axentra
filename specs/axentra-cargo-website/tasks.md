@@ -127,7 +127,7 @@
 
 ## Fase 4: Feature Components (Client)
 
-- [ ] **T022**: Build `HeroCTAs` component (dual CTA, smooth scroll)
+- [x] **T022**: Build `HeroCTAs` component (dual CTA, smooth scroll)
     - **Archivo(s)**: `components/features/hero/HeroCTAs.tsx`
     - **Test**: `tests/unit/components/features/hero/HeroCTAs.test.tsx` - clicks trigger scroll, focus management
     - **Done When**: Primary → `#contacto`, Secondary → `#valor`, respects reduced motion
