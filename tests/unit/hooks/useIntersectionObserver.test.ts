@@ -1,21 +1,6 @@
 import { renderHook, act } from '@testing-library/react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
-function createMockEntry(
-  isIntersecting: boolean,
-  target: Element
-): IntersectionObserverEntry {
-  return {
-    isIntersecting,
-    target,
-    boundingClientRect: new DOMRectReadOnly(),
-    intersectionRatio: isIntersecting ? 1 : 0,
-    intersectionRect: new DOMRectReadOnly(),
-    rootBounds: null,
-    time: 0,
-  } as IntersectionObserverEntry;
-}
-
 describe('useIntersectionObserver', () => {
   it('returns false initially', () => {
     const { result } = renderHook(() =>
@@ -51,7 +36,16 @@ describe('useIntersectionObserver', () => {
     ref(element);
 
     act(() => {
-      observeCallback?.([createMockEntry(true, element)]);
+      const entry: IntersectionObserverEntry = {
+        isIntersecting: true,
+        target: element,
+        boundingClientRect: new DOMRectReadOnly(),
+        intersectionRatio: 1,
+        intersectionRect: new DOMRectReadOnly(),
+        rootBounds: null,
+        time: 0,
+      };
+      observeCallback?.([entry], {} as IntersectionObserver);
     });
 
     expect(result.current[1]).toBe(true);
@@ -82,12 +76,30 @@ describe('useIntersectionObserver', () => {
     ref(element);
 
     act(() => {
-      observeCallback?.([createMockEntry(true, element)]);
+      const entry: IntersectionObserverEntry = {
+        isIntersecting: true,
+        target: element,
+        boundingClientRect: new DOMRectReadOnly(),
+        intersectionRatio: 1,
+        intersectionRect: new DOMRectReadOnly(),
+        rootBounds: null,
+        time: 0,
+      };
+      observeCallback?.([entry], {} as IntersectionObserver);
     });
     expect(result.current[1]).toBe(true);
 
-    act(() => {
-      observeCallback?.([createMockEntry(false, element)]);
+act(() => {
+      const entry: IntersectionObserverEntry = {
+        isIntersecting: false,
+        target: element,
+        boundingClientRect: new DOMRectReadOnly(),
+        intersectionRatio: 0,
+        intersectionRect: new DOMRectReadOnly(),
+        rootBounds: null,
+        time: 0,
+      };
+      observeCallback?.([entry], {} as IntersectionObserver);
     });
     expect(result.current[1]).toBe(false);
   });
