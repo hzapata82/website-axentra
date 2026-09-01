@@ -89,7 +89,7 @@
     - **Test**: `tests/unit/components/Card.test.tsx` - children render, hover/focus states
     - **Done When**: Border, shadow, hover elevation, `focus-visible-ring` on interactive cards
 
-- [ ] **T016**: Build `Toast` notification component
+- [x] **T016**: Build `Toast` notification component
     - **Archivo(s)**: `components/ui/Toast.tsx`, `components/ui/ToastProvider.tsx`
     - **Test**: `tests/unit/components/Toast.test.tsx` - success/error variants, auto-dismiss, accessibility
     - **Done When**: `role="alert"`, `aria-live="polite"`, keyboard dismissible
