@@ -36,7 +36,7 @@
     - **Test**: `tests/unit/data/content.test.ts` - imports work, types match
     - **Done When**: All content from spec.md represented, typed correctly
 
-- [ ] **T007**: Configure environment variables schema
+- [x] **T007**: Configure environment variables schema
     - **Archivo(s)**: `.env.example`, `lib/env.ts` (with `zod` validation)
     - **Test**: `pnpm run typecheck` validates env at build
     - **Done When**: Required vars: `RESEND_API_KEY`, `LEAD_NOTIFICATION_EMAIL`, `NEXT_PUBLIC_SITE_URL`; optional: `CRM_WEBHOOK_URL`, `NEXT_PUBLIC_GA_ID`, `NEXT_PUBLIC_GTM_ID`, `SENTRY_DSN`
