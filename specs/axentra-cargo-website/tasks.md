@@ -118,7 +118,7 @@
     - **Test**: `tests/unit/hooks/useIntersectionObserver.test.ts` - triggers on viewport entry
     - **Done When**: Configurable rootMargin, threshold, cleanup on unmount
 
-- [ ] **T021**: Create `useSmoothScroll` hook (respects reduced motion)
+- [x] **T021**: Create `useSmoothScroll` hook (respects reduced motion)
     - **Archivo(s)**: `hooks/useSmoothScroll.ts`
     - **Test**: `tests/unit/hooks/useSmoothScroll.test.ts` - scrolls to element, instant if reduced motion
     - **Done When**: `scrollIntoView` with behavior based on preference

@@ -19,3 +19,12 @@ Object.defineProperty(window, 'scrollTo', {
   writable: true,
   value: vi.fn(),
 });
+
+if (!Element.prototype.scrollIntoView) {
+  Element.prototype.scrollIntoView = vi.fn();
+} else {
+  const originalScrollIntoView = Element.prototype.scrollIntoView;
+  Element.prototype.scrollIntoView = vi.fn(function (this: Element, options?: ScrollIntoViewOptions) {
+    return originalScrollIntoView.call(this, options);
+  });
+}
