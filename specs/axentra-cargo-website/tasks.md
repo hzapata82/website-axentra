@@ -21,7 +21,7 @@
     - **Test**: Visual verification - no FOIT, fonts load via Network tab
     - **Done When**: Both fonts self-hosted, CSS variables `--font-montserrat`, `--font-inter` available
 
-- [ ] **T004**: Create TypeScript type definitions in `src/types/`
+- [x] **T004**: Create TypeScript type definitions in `src/types/`
     - **Archivo(s)**: `src/types/hero.ts`, `src/types/industry.ts`, `src/types/kpi.ts`, `src/types/service.ts`, `src/types/contact-form.ts`, `src/types/index.ts`
     - **Test**: `pnpm run typecheck` passes, types export correctly
     - **Done When**: All interfaces defined, barrel export works
