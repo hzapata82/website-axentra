@@ -60,12 +60,12 @@
 
 ## Fase 1: Styles & Design System (Tailwind v4)
 
-- [ ] **T011**: Add global styles, CSS variables, `prefers-reduced-motion` media query
+- [x] **T011**: Add global styles, CSS variables, `prefers-reduced-motion` media query
     - **Archivo(s)**: `src/styles/globals.css`
     - **Test**: `tests/integration/a11y.spec.ts` - reduced motion disables animations
     - **Done When**: All design tokens as CSS vars via `@theme`, reduced motion kills animations/transitions, Tailwind v4 syntax
 
-- [ ] **T012**: Configure Tailwind v4 CSS-first design tokens (colors, fonts, animations)
+- [x] **T012**: Configure Tailwind v4 CSS-first design tokens (colors, fonts, animations)
     - **Archivo(s)**: `src/styles/globals.css` (using `@theme` directive)
     - **Test**: `pnpm run build` compiles CSS, tokens usable in components
     - **Done When**: Navy, Slate, Accent Blue, fonts, animations defined as CSS vars, no `tailwind.config.ts` needed
@@ -108,7 +108,7 @@
 
 ## Fase 3: Animation & Interaction Hooks
 
-- [ ] **T019**: Create `useReducedMotion` hook
+- [x] **T019**: Create `useReducedMotion` hook
     - **Archivo(s)**: `hooks/useReducedMotion.ts`
     - **Test**: `tests/unit/hooks/useReducedMotion.test.ts` - matches media query, updates on change
     - **Done When**: Returns boolean, subscribes to `prefers-reduced-motion` changes
