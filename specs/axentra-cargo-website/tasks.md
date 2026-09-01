@@ -26,7 +26,7 @@
     - **Test**: `pnpm run typecheck` passes, types export correctly
     - **Done When**: All interfaces defined, barrel export works
 
-- [ ] **T005**: Create Zod validation schema for contact form
+- [x] **T005**: Create Zod validation schema for contact form
     - **Archivo(s)**: `lib/validations/contact-form.ts`
     - **Test**: `tests/unit/utils/validation.test.ts` - valid/invalid inputs
     - **Done When**: Schema validates email, company, volume, details per spec
