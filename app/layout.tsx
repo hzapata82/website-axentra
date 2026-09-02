@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { montserrat, inter } from './fonts';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
@@ -59,8 +61,16 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-screen bg-white text-navy">
+      <body className="flex min-h-screen flex-col bg-white text-navy">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-accent-blue focus:px-4 focus:py-2 focus:text-white"
+        >
+          Saltar al contenido principal
+        </a>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

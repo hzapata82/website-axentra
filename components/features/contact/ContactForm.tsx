@@ -10,6 +10,8 @@ import { Button } from '@/components/ui/Button';
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+
 export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>('idle');
   const [serverError, setServerError] = useState<string | null>(null);
@@ -24,18 +26,41 @@ export function ContactForm() {
     mode: 'onBlur',
   });
 
-  const onSubmit = async (_data: ContactFormInput) => {
+  const onSubmit = async (data: ContactFormInput) => {
     setStatus('submitting');
     setServerError(null);
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+    if (!accessKey) {
+      setStatus('error');
+      setServerError(
+        'Formulario no configurado. Escríbanos directamente a ventas@axentracargo.com'
+      );
+      return;
+    }
+
     try {
-      const res = await fetch('/api/lead', {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(_data),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `[Lead] ${data.company} — ${data.volume} TEUs/FEUs`,
+          from_name: 'Axentra Cargo Website',
+          email: data.email,
+          company: data.company,
+          volume: data.volume,
+          details: data.details,
+          botcheck: '',
+        }),
       });
-      if (!res.ok) {
-        throw new Error('server-error');
+
+      const result = (await res.json()) as { success?: boolean; message?: string };
+
+      if (!res.ok || !result.success) {
+        throw new Error(result.message ?? 'server-error');
       }
+
       setStatus('success');
       reset();
     } catch {

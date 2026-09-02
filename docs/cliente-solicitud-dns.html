@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Solicitud DNS — Axentra Cargo</title>
+<style>
+  @page { margin: 2cm; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1a202c; max-width: 800px; margin: 0 auto; padding: 2rem; }
+  h1 { color: #0A192F; border-bottom: 3px solid #1E40AF; padding-bottom: 0.5rem; }
+  h2 { color: #0A192F; margin-top: 2rem; border-left: 4px solid #1E40AF; padding-left: 0.75rem; }
+  h3 { color: #1E40AF; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #CBD5E1; padding: 0.6rem 0.8rem; text-align: left; }
+  th { background: #F8FAFC; font-weight: 600; }
+  code { background: #F1F5F9; padding: 0.15rem 0.4rem; border-radius: 3px; font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.9em; }
+  .meta { background: #F8FAFC; border-left: 4px solid #6C7A89; padding: 1rem 1.5rem; margin: 1.5rem 0; }
+  .recommended { background: #ECFDF5; border-left: 4px solid #10B981; padding: 1rem 1.5rem; margin: 1.5rem 0; }
+  .warning { background: #FEF3C7; border-left: 4px solid #F59E0B; padding: 1rem 1.5rem; margin: 1.5rem 0; }
+  .footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #CBD5E1; font-size: 0.9em; color: #6C7A89; }
+  @media print { .no-print { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="no-print" style="background:#0A192F;color:white;padding:1rem;border-radius:8px;margin-bottom:2rem;">
+  <strong>📄 Para guardar como PDF:</strong> Presiona <kbd>Cmd + P</kbd> (Mac) o <kbd>Ctrl + P</kbd> (Windows) → "Guardar como PDF"
+</div>
+
+<h1>Solicitud de Acceso DNS</h1>
+<h2 style="border:none;padding:0;margin-top:0;">Axentra Cargo — Activación de Dominio</h2>
+
+<div class="meta">
+  <strong>Para:</strong> Cliente (administrador de Google Workspace de <code>axentracargo.com</code>)<br>
+  <strong>De:</strong> Henry Zapata — Desarrollo Web Axentra<br>
+  <strong>Fecha:</strong> 02 de septiembre de 2026<br>
+  <strong>Asunto:</strong> Permiso para configurar registros DNS del dominio hacia Vercel
+</div>
+
+<h2>¿Qué necesito de ti?</h2>
+
+<p>Para activar el sitio web <strong>https://axentracargo.com</strong> (actualmente en preview en Vercel) necesito que me otorgues <strong>una de estas dos opciones</strong>:</p>
+
+<div class="recommended">
+  <h3>Opción A (RECOMENDADA) — Usuario administrador delegado</h3>
+  <p>Crear un usuario administrador delegado en Google Workspace con acceso <strong>únicamente al módulo DNS</strong> (no a Gmail, Drive, ni otros servicios).</p>
+
+  <p><strong>Qué necesito que hagas:</strong></p>
+  <ol>
+    <li>Accede a <strong>Google Admin Console</strong> (<a href="https://admin.google.com">admin.google.com</a>) con tu cuenta de super-administrador.</li>
+    <li>Ve a <strong>Menú → Directorio → Usuarios → Agregar usuario</strong>.</li>
+    <li>Completa los campos:
+      <ul>
+        <li><strong>Nombre:</strong> <code>Henry Zapata</code></li>
+        <li><strong>Apellido:</strong> <code>Desarrollo Web</code></li>
+        <li><strong>Email principal:</strong> <code>dns@axentracargo.com</code> (o el que prefieras)</li>
+        <li><strong>Contraseña:</strong> generar una temporal; yo la cambiaré al primer login</li>
+      </ul>
+    </li>
+    <li>En <strong>Funciones y permisos del usuario</strong>, asigna el rol:
+      <ul>
+        <li><strong>"Administrador de DNS"</strong> (si está disponible en tu edición de Workspace)</li>
+        <li>O bien, <strong>"Superadministrador"</strong> (con la advertencia de que tendré acceso total, opción menos segura)</li>
+      </ul>
+    </li>
+    <li>Comparte conmigo las credenciales por un canal seguro (te recomiendo llamada telefónica o password manager compartido como 1Password/Bitwarden, <strong>nunca por email</strong>).</li>
+  </ol>
+
+  <p><strong>Tiempo estimado para ti:</strong> 5 minutos.</p>
+</div>
+
+<h3>Opción B (alternativa segura) — Tú agregas los registros DNS</h3>
+<p>Si prefieres no compartir acceso a tu consola de Google, tú mismo puedes agregar <strong>3 registros DNS en 5 minutos</strong>. Te paso los valores exactos al final de este documento.</p>
+
+<p><strong>Pasos que harías:</strong></p>
+<ol>
+  <li>Accede a <a href="https://admin.google.com/ac/domains/manage">admin.google.com → Dominios</a> → Administrar dominios → <code>axentracargo.com</code> → Configurar DNS.</li>
+  <li>Selecciona la pestaña <strong>"Registros de recursos"</strong> (o "Custom resource records").</li>
+  <li>Agrega los 3 registros de la <strong>Tabla 1</strong> al final de este documento.</li>
+  <li>Confírmame por email cuando estén agregados.</li>
+  <li>Yo configuro Vercel para verificarlos y emitir el certificado SSL.</li>
+</ol>
+
+<h2>¿Por qué necesito esto?</h2>
+
+<p>Vercel (donde está desplegado el sitio) necesita que el dominio apunte a sus servidores mediante registros DNS. El proceso estándar es:</p>
+
+<pre style="background:#F8FAFC;padding:1rem;border-radius:6px;border:1px solid #CBD5E1;">
+Usuario escribe:    axentracargo.com
+        ↓
+DNS resuelve a:     76.76.21.21 (Vercel)
+        ↓
+Vercel sirve:       sitio web con SSL automático</pre>
+
+<p>Una vez configurado, <strong>Vercel renueva el certificado SSL cada 60 días automáticamente</strong> y se encarga de toda la infraestructura.</p>
+
+<h2>¿Qué pasa después?</h2>
+
+<table>
+  <thead>
+    <tr><th>Paso</th><th>Responsable</th><th>Tiempo</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1. Agregar acceso o registros DNS</td><td><strong>Tú (cliente)</strong></td><td>5 min</td></tr>
+    <tr><td>2. Yo configuro Vercel (dominio + SSL)</td><td>Henry Zapata</td><td>10 min</td></tr>
+    <tr><td>3. Propagación DNS global</td><td>Automático</td><td>5 min – 48 h</td></tr>
+    <tr><td>4. Sitio activo en https://axentracargo.com</td><td>—</td><td>&lt; 1 h típicamente</td></tr>
+  </tbody>
+</table>
+
+<h2>¿Es seguro?</h2>
+
+<p><strong>Sí.</strong> Los registros DNS son públicos y no afectan la seguridad de tu email, Google Drive, ni otros servicios. Es el mismo procedimiento que usan todas las páginas web del mundo (Mercado Libre, bancos, gobierno).</p>
+
+<p><strong>Lo que NO cambia:</strong></p>
+<ul>
+  <li>Tu email en Google Workspace sigue funcionando igual</li>
+  <li>Google Drive, Calendar, Meet, todo sigue igual</li>
+  <li>Los registros DNS son visibles públicamente (<code>dig axentracargo.com</code>)</li>
+</ul>
+
+<p><strong>Lo que SÍ cambia:</strong></p>
+<ul>
+  <li>Cuando alguien escribe <code>axentracargo.com</code> en el navegador, ahora llega al sitio nuevo en Vercel (antes podía llegar a un parking page del registrador).</li>
+</ul>
+
+<h2>Tabla 1 — Registros DNS a agregar (Opción B)</h2>
+
+<p>Agrega estos <strong>3 registros exactos</strong> en tu consola DNS de Google Workspace:</p>
+
+<table>
+  <thead>
+    <tr><th>Tipo</th><th>Nombre / Host</th><th>Valor / Destino</th><th>TTL</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>A</strong></td>
+      <td><code>@</code> (o dejar vacío)</td>
+      <td><code>76.76.21.21</code></td>
+      <td>3600</td>
+    </tr>
+    <tr>
+      <td><strong>CNAME</strong></td>
+      <td><code>www</code></td>
+      <td><code>cname.vercel-dns.com.</code></td>
+      <td>3600</td>
+    </tr>
+    <tr>
+      <td><strong>TXT</strong> (opcional)</td>
+      <td><code>@</code></td>
+      <td><code>vc-domain-verify=axentracargo.com,</code></td>
+      <td>300</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="warning">
+  <strong>⚠️ Nota importante:</strong> En la consola de Google Workspace, el campo "Nombre" del registro <code>A</code> debe quedar <strong>vacío</strong> o con <code>@</code> (representa el dominio raíz). No pongas <code>axentracargo.com</code> literal.
+</div>
+
+<div class="warning">
+  <strong>⚠️ Si ya existen registros <code>A</code> o <code>CNAME</code> para <code>@</code> o <code>www</code></strong>, debes eliminarlos primero (suelen ser los parking pages del registrador o registros antiguos de Google Sites).
+</div>
+
+<div class="footer">
+  <h3>¿Dudas?</h3>
+  <p>Responde este email o escríbeme directamente. Si prefieres, puedo agendar una llamada de 15 minutos para hacerlo juntos por videollamada.</p>
+
+  <p>
+    <strong>Henry Zapata</strong><br>
+    Desarrollo Web — Axentra Cargo<br>
+    <a href="mailto:henry.zapata82@gmail.com">henry.zapata82@gmail.com</a>
+  </p>
+
+  <p style="font-size:0.85em;margin-top:2rem;"><em>Este documento es una solicitud formal de acceso. Si tu política de seguridad interna requiere autorización escrita para crear usuarios administradores delegados, puedo proporcionarte una carta de autorización firmada.</em></p>
+</div>
+
+</body>
+</html>

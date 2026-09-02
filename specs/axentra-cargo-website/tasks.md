@@ -139,7 +139,7 @@
     - **Done When**: Dynamic import Lottie, `<Image>` fallback with `priority` + `placeholder="blur"`, `altText` from data
     - **Depende de**: T006, T019
 
-- [ ] **T024**: Build `KpiCounter` animated counter component
+- [x] **T024**: Build `KpiCounter` animated counter component
     - **Archivo(s)**: `components/features/value/KpiCounter.tsx`, `components/features/value/KpiCallouts.tsx`
     - **Test**: `tests/unit/components/features/value/KpiCounter.test.tsx` - animates on intersect, instant if reduced motion
     - **Done When**: `IntersectionObserver` trigger, `requestAnimationFrame` count-up, accessibility (sr-only final value)
@@ -209,7 +209,7 @@
     - **Done When**: Imports `contactFormConfig`, passes to `ContactForm`
     - **Depende de**: T006, T027
 
-- [ ] **T035**: Build `Header` and `Footer` Server Components
+- [x] **T035**: Build `Header` and `Footer` Server Components
     - **Archivo(s)**: `components/layout/Header.tsx`, `components/layout/Footer.tsx`
     - **Test**: Visual - nav links, logo, footer info
     - **Done When**: Semantic `<header>`, `<footer>`, anchor links to sections
@@ -220,7 +220,7 @@
     - **Done When**: Sections in order: Hero → Value → Services → Contact, no layout shift
     - **Depende de**: T029, T032, T033, T034, T035
 
-- [ ] **T037**: Build `RootLayout` (`app/layout.tsx`) with metadata, fonts, providers
+- [x] **T037**: Build `RootLayout` (`app/layout.tsx`) with metadata, fonts, providers
     - **Archivo(s)**: `app/layout.tsx`
     - **Test**: `pnpm run build` succeeds, metadata present in HTML
     - **Done When**: Fonts loaded, `generateMetadata` returns SEO data, ToastProvider wraps children
@@ -230,17 +230,18 @@
 
 ## Fase 6: API Route & Server Logic
 
-- [ ] **T038**: Implement email sending utility (Resend)
-    - **Archivo(s)**: `lib/email.ts`
-    - **Test**: `tests/unit/lib/email.test.ts` - constructs email, calls API (mocked)
-    - **Done When**: Sends HTML + text email with lead data, handles API errors
+- [x] **T038**: Implement email sending utility (Web3Forms client integration)
+    - **Archivo(s)**: `components/features/contact/ContactForm.tsx` (Web3Forms), `.env.example`
+    - **Test**: form submit success/error states covered in ContactForm.test.tsx
+    - **Done When**: Form posts to api.web3forms.com/submit with access_key, handles success/error
     - **Depende de**: T007
 
-- [ ] **T039**: Implement `POST /api/lead` route
-    - **Archivo(s)**: `app/api/lead/route.ts`
-    - **Test**: `tests/integration/contact-form.spec.ts` - valid submit → 200, invalid → 400, server error → 500
-    - **Done When**: Zod validation, sends email, optional CRM webhook, returns leadId, rate limited
+- [x] **T039**: Lead submission (client-side via Web3Forms)
+    - **Archivo(s)**: `components/features/contact/ContactForm.tsx`
+    - **Test**: `tests/unit/components/features/contact/ContactForm.test.tsx`
+    - **Done When**: Zod validation, sends to Web3Forms, displays success/error, preserves data on error
     - **Depende de**: T005, T038
+    - **Nota**: API route original descartada — output: 'export' no soporta API routes. Migrado a Web3Forms para mantener sitio 100% estático.
 
 ---
 
