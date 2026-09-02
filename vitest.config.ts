@@ -20,11 +20,13 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '.'),
       '@/components': path.resolve(__dirname, './components'),
       '@/hooks': path.resolve(__dirname, './hooks'),
       '@/lib': path.resolve(__dirname, './lib'),
-      '@/src': path.resolve(__dirname, './src'),
+      '@/data': path.resolve(__dirname, './src/data'),
+      '@/types': path.resolve(__dirname, './src/types'),
+      '@/app': path.resolve(__dirname, './app'),
+      '@': path.resolve(__dirname, '.'),
     },
   },
   esbuild: {

@@ -157,7 +157,7 @@
     - **Done When**: Semantic `<article>`, `tabIndex=0`, `role="button"` if interactive, focus ring
     - **Depende de**: T015, T019
 
-- [ ] **T027**: Build `ContactForm` component (react-hook-form + Zod)
+- [x] **T027**: Build `ContactForm` component (react-hook-form + Zod)
     - **Archivo(s)**: `components/features/contact/ContactForm.tsx`
     - **Test**: `tests/unit/components/features/contact/ContactForm.test.tsx` - validation, submit, loading, error, success, reset
     - **Done When**: Client-side validation (Zod), server re-validation, loading state, toast success/error, focus first error, preserves data on server error
@@ -167,43 +167,43 @@
 
 ## Fase 5: Server Components & Pages
 
-- [ ] **T028**: Build `HeroContent` Server Component
+- [x] **T028**: Build `HeroContent` Server Component
     - **Archivo(s)**: `components/features/hero/HeroContent.tsx`
     - **Test**: Visual - renders title, subtitle, CTAs from data
     - **Done When**: Imports `heroData`, renders semantic HTML (h1, p), passes data to `HeroCTAs`
     - **Depende de**: T006, T022
 
-- [ ] **T029**: Build `HeroSection` (composes HeroContent + GpsVisualizer)
+- [x] **T029**: Build `HeroSection` (composes HeroContent + GpsVisualizer)
     - **Archivo(s)**: `components/features/hero/HeroSection.tsx`
     - **Test**: `tests/integration/hero.spec.ts` - renders both columns, responsive stack
     - **Done When**: 2-col desktop, stack mobile, GPS right/left order correct
     - **Depende de**: T023, T028
 
-- [ ] **T030**: Build `SavingsBlock` Server Component
-    - **Archivo(s)**: `components/features/value/SavingsBlock.tsx`
+- [x] **T030**: Build `SavingsBlock` Server Component
+    - **Archivo(s)**: `components/features/value/SavingsBlock.tsx`, `components/features/value/KpiCallouts.tsx`
     - **Test**: Visual - renders header, description, KpiCallouts
     - **Done When**: Imports `kpisData`, passes to `KpiCallouts`
     - **Depende de**: T006, T024
 
-- [ ] **T031**: Build `IndustriesBlock` Server Component
-    - **Archivo(s)**: `components/features/value/IndustriesBlock.tsx`
+- [x] **T031**: Build `IndustriesBlock` Server Component
+    - **Archivo(s)**: `components/features/value/IndustriesBlock.tsx`, `components/features/value/IndustryCard.tsx`
     - **Test**: `tests/integration/value-section.spec.ts` - renders 6 cards, grid 3x2 desktop
     - **Done When**: Maps `industriesData` to `IndustryCard[]`, responsive grid (1-col mobile, 2-col tablet, 3-col desktop)
     - **Depende de**: T006, T025
 
-- [ ] **T032**: Build `ValueSection` (composes SavingsBlock + IndustriesBlock)
+- [x] **T032**: Build `ValueSection` (composes SavingsBlock + IndustriesBlock)
     - **Archivo(s)**: `components/features/value/ValueSection.tsx`
     - **Test**: `tests/integration/value-section.spec.ts` - both blocks render, correct order
     - **Done When**: Section id `#valor`, heading hierarchy h2 → h3
     - **Depende de**: T030, T031
 
-- [ ] **T033**: Build `ServicesSection` Server Component
-    - **Archivo(s)**: `components/features/services/ServicesSection.tsx`
+- [x] **T033**: Build `ServicesSection` Server Component
+    - **Archivo(s)**: `components/features/services/ServicesSection.tsx`, `components/features/services/ServiceCard.tsx`
     - **Test**: `tests/integration/services.spec.ts` - 5 cards, grid 3/2 layout
     - **Done When**: Maps `servicesData` to `ServiceCard[]`, grid 3 top / 2 bottom centered, responsive (1-col mobile, 2-col tablet)
     - **Depende de**: T006, T026
 
-- [ ] **T034**: Build `ContactSection` Server Component
+- [x] **T034**: Build `ContactSection` Server Component
     - **Archivo(s)**: `components/features/contact/ContactSection.tsx`
     - **Test**: Visual - renders form, privacy text, section id `#contacto`
     - **Done When**: Imports `contactFormConfig`, passes to `ContactForm`
@@ -214,8 +214,8 @@
     - **Test**: Visual - nav links, logo, footer info
     - **Done When**: Semantic `<header>`, `<footer>`, anchor links to sections
 
-- [ ] **T036**: Build `HomePage` (`app/page.tsx`) - compose all sections
-    - **Archivo(s)**: `app/page.tsx`
+- [x] **T036**: Build `HomePage` (`app/page.tsx`) - compose all sections
+    - **Archivo(s)**: `app/page.tsx`, `components/features/value/ValueSection.tsx`, `components/features/services/ServicesSection.tsx`, `components/features/contact/ContactSection.tsx`
     - **Test**: `tests/integration/homepage.spec.ts` - all sections render, anchor links work
     - **Done When**: Sections in order: Hero → Value → Services → Contact, no layout shift
     - **Depende de**: T029, T032, T033, T034, T035
