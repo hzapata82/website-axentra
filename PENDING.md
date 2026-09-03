@@ -50,9 +50,9 @@ SVG genérico actual. Diseñar versión con fotografía/ilustración.
 
 ## 🟢 Deuda técnica (no bloquea, baja prioridad)
 
-### 5. Arreglar test GpsVisualizer.test.tsx — Issue [#5](https://github.com/hzapata82/website-axentra/issues/5)
+### ~~5. Arreglar test GpsVisualizer.test.tsx — Issue [#5]~~ ✅ Resuelto
 
-`lottie-web` falla en jsdom. Solución: mockear lottie-web en el test (5 min).
+`lottie-web` ahora se mockea en el test (commit b819da4). 104/104 tests passing, 0 type errors.
 
 ---
 
