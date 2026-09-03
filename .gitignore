@@ -13,4 +13,6 @@ out
 .turbo
 coverage
 dist
-buildtest-results/
+build
+test-results/
+playwright-report/
