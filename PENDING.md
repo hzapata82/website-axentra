@@ -38,13 +38,13 @@
 
 ## 🟡 Nice-to-have (no bloquean)
 
-### 3. Reemplazar GPS placeholder por asset real — Issue [#3](https://github.com/hzapata82/website-axentra/issues/3)
+### ~~3. Reemplazar GPS placeholder por asset real — Issue [#3]~~ ✅ Resuelto
 
-SVG funcional actual. Mejorar con diseño profesional o animación Lottie cuando se tenga el brief de marca.
+SVG profesional con hub glow, doble ruta, tarjeta ETA, badges. Commit 6c8ccc2.
 
-### 4. Mejorar Open Graph image — Issue [#4](https://github.com/hzapata82/website-axentra/issues/4)
+### ~~4. Mejorar Open Graph image — Issue [#4]~~ ✅ Resuelto
 
-SVG genérico actual. Diseñar versión con fotografía/ilustración.
+OG rediseñado con grid bg, gradiente accent, gráfico de ruta. Commit 6c8ccc2.
 
 ---
 
