@@ -7,7 +7,10 @@ export function SavingsBlock() {
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-blue">
         Value Block A
       </p>
-      <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy text-balance">
+      <h2
+        id="savings-heading"
+        className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy text-balance"
+      >
         Arquitectura de Ahorro Operativo
       </h2>
       <p className="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-slate text-pretty">
