@@ -2,6 +2,7 @@
 export default {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://axentracargo.com',
   generateRobotsTxt: true,
+  outDir: 'out',
   robotsTxtOptions: {
     policies: [{ userAgent: '*', allow: '/' }],
     sitemap: 'https://axentracargo.com/sitemap.xml',
