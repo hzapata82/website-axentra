@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: 'Transporte multimodal, cruce fronterizo México-EE.UU., gestión de carga especializada.',
     images: [
       {
-        url: '/images/og-default.webp',
+        url: '/images/og-default.svg',
         width: 1200,
         height: 630,
         alt: 'Axentra Cargo - Logística Industrial',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Axentra Cargo | Logística Industrial de Alto Rendimiento',
     description: 'Transporte multimodal, cruce fronterizo México-EE.UU., gestión de carga especializada.',
-    images: ['/images/og-default.webp'],
+    images: ['/images/og-default.svg'],
   },
   robots: {
     index: true,

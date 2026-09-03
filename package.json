@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "SITEMAP_CONFIG_PATH=./next-sitemap.config.cjs next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",

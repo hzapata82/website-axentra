@@ -7,7 +7,7 @@ export const heroData: HeroData = {
   ctaSecondary: { label: 'EXPLORAR CAPACIDADES', href: '#valor' },
   gpsVisualizer: {
     animationUrl: '/images/hero-gps-animation.lottie.json',
-    fallbackImage: '/images/hero-gps-fallback.webp',
+    fallbackImage: '/images/hero-gps-fallback.svg',
     altText: 'Mapa de rutas logísticas Axentra Cargo México-Estados Unidos',
   },
 };

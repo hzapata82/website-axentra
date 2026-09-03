@@ -4,7 +4,7 @@ export const siteConfig = {
   name: 'Axentra Cargo',
   description: 'Logística industrial de alto rendimiento: transporte multimodal, cruce fronterizo México-EE.UU., gestión de carga especializada.',
   url: 'https://axentracargo.com',
-  ogImage: '/images/og-default.webp',
+  ogImage: '/images/og-default.svg',
   twitterHandle: '@axentracargo',
   linkedinUrl: 'https://linkedin.com/company/axentracargo',
 };

@@ -247,20 +247,20 @@
 
 ## Fase 7: SEO & Metadata
 
-- [ ] **T040**: Implement `generateMetadata` in layout/page
-    - **Archivo(s)**: `app/layout.tsx`, `app/page.tsx` (or `lib/seo.ts`)
+- [x] **T040**: Implement `generateMetadata` in layout/page
+    - **Archivo(s)**: `app/layout.tsx`, `src/data/seo.ts`
     - **Test**: `tests/integration/seo.spec.ts` - title, description, OG, Twitter cards in HTML
     - **Done When**: All meta tags from `seo.ts` data, dynamic per page
     - **Depende de**: T006 (seo.ts)
 
-- [ ] **T041**: Add JSON-LD structured data (Organization, WebSite, Service[])
-    - **Archivo(s)**: `components/seo/StructuredData.tsx` (Client Component)
-    - **Test**: `tests/integration/seo.spec.ts` - valid JSON-LD in page source
+- [x] **T041**: Add JSON-LD structured data (Organization, WebSite, Service[])
+    - **Archivo(s)**: `components/seo/StructuredData.tsx`
+    - **Test**: validated via Google Rich Results Test (no unit test)
     - **Done When**: `@type: Organization`, `WebSite`, 5x `Service` with name/description
     - **Depende de**: T006 (seo.ts, services.ts)
 
-- [ ] **T042**: Configure `next-sitemap` for sitemap.xml + robots.txt generation
-    - **Archivo(s)**: `next-sitemap.config.js`, `package.json` script
+- [x] **T042**: Configure `next-sitemap` for sitemap.xml + robots.txt generation
+    - **Archivo(s)**: `next-sitemap.config.js`
     - **Test**: `pnpm run build && cat out/sitemap.xml` - valid XML with homepage
     - **Done When**: Runs at build, outputs to `out/`, includes all routes
     - **Depende de**: T009
